@@ -30,6 +30,15 @@ export default function TextForm(parms) {
         }
         setText(str);
     }
+    const toCopyText = () => {
+        let newText = document.getElementById('box');
+        newText.select();
+        navigator.clipboard.writeText(newText.value);
+    }
+    const toRemoveSpace = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
 
     const handelOnChange = (event) => {
         setText(event.target.value);
@@ -44,6 +53,8 @@ export default function TextForm(parms) {
                     <button className="btn btn-warning my-2 mx-1" onClick={toLoCase}>To LowerCase</button>
                     <button className="btn btn-danger my-2 mx-1" onClick={toClear}>Clear</button>
                     <button className="btn btn-success my-2 mx-1" onClick={toCapitalize}>To Capitalize</button>
+                    <button className="btn btn-secondary my-2 mx-1" onClick={toCopyText}>Copy text</button>
+                    <button className="btn btn-info my-2 mx-1" onClick={toRemoveSpace}>Remove Extra Space</button>
                 </div>
             </div>
             <div className="container">
