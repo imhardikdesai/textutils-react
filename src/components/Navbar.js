@@ -19,10 +19,11 @@ export default function Navbar(parms) {
                                 <a className="nav-link" href="/">{parms.aboutText}</a>
                             </li>
                         </ul>
-                        {/* <form className="d-flex" role="search">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
-                        </form> */}
+
+                        {/* <span className="p-3 m-1 rounded-2 bg-primary"></span>
+                        <span className="p-3 m-1 rounded-2 bg-success"></span>
+                        <span className="p-3 m-1 ml rounded-2 bg-danger"></span> */}
+
                         <div className={`form-check form-switch text-${parms.mode === 'dark' ? 'light' : 'dark'}`}>
                             <input className="form-check-input" onClick={parms.toogleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark mode</label>
