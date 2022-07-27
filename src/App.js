@@ -4,12 +4,11 @@ import Alert from './components/Alert';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 
 function App() {
@@ -40,20 +39,20 @@ function App() {
   }
   return (
     <>
-      <Router>
+      {/* <Router> */}
         <Navbar title='TextUtils' mode={mode} toogleMode={toogleMode} aboutText='About us' />
         <Alert alert={alert} />
         <div className="container my-4">
-          <Switch>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/">
+          {/* <Switch> */}
+            {/* <Route exact path="/about"> */}
+              {/* <About /> */}
+            {/* </Route> */}
+            {/* <Route exact path="/"> */}
               <TextForm title="Welcome to TextUtils" showAlert={showAlert} mode={mode} />
-            </Route>
-          </Switch>
+            {/* </Route> */}
+          {/* </Switch> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
