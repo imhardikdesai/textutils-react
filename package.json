@@ -1,6 +1,6 @@
 {
-  "homepage": "https://imhardikdesai.github.io/TextUtils-react",
-  "name": "my-app",
+  "homepage": "https://imhardikdesai.github.io/textutils-react",
+  "name": "textutils-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
