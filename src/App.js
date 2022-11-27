@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 
@@ -14,6 +14,7 @@ import {
 function App() {
   const [mode, setMode] = useState('light');
   const [alert, setAlert] = useState(null);
+
   const toogleMode = () => {
     if (mode === 'light') {
       setMode('dark');
@@ -43,14 +44,10 @@ function App() {
         <Navbar title='TextUtils' mode={mode} toogleMode={toogleMode} aboutText='About us' />
         <Alert alert={alert} />
         <div className="container my-4">
-          <Switch>
-            <Route exact path="/about">
-              <About mode={mode}/>
-            </Route>
-            <Route exact path="/">
-              <TextForm title="Welcome to TextUtils" showAlert={showAlert} mode={mode} />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route exact path="/" element={<TextForm title="Welcome to TextUtils" showAlert={showAlert} mode={mode} />} />
+            <Route exact path="/about" element={<About mode={mode} />} />
+          </Routes>
         </div>
       </Router>
     </>
