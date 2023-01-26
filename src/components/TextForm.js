@@ -55,7 +55,7 @@ export default function TextForm(parms) {
                 <h3>{parms.title}</h3>
                 <div className="mb-3">
                     <textarea className="form-control" style={{ backgroundColor: parms.mode === 'dark' ? '#133c5c' : 'white', color: parms.mode === 'dark' ? '#57fff1' : 'black' }} placeholder='Enter Your text' value={text} onChange={handelOnChange} id="box" rows="8"></textarea>
-                    <button disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={toUpCase}>To UpperCase</button>
+                    <button id="upperBTN" disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={toUpCase}>To UpperCase</button>
                     <button disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={toLoCase}>To LowerCase</button>
                     <button disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={toClear}>Clear</button>
                     <button disabled={text.length === 0} className="btn btn-primary my-2 mx-1" onClick={toCapitalize}>To Capitalize</button>
@@ -69,8 +69,8 @@ export default function TextForm(parms) {
                 <p>{0.008 * text.split(' ').filter((element) => { return element.length !== 0 }).length} minutes to Read</p>
                 <hr />
                 <h3>Preview</h3>
-                <p>{text.length > 0 ? text : "Nothing to show"}</p>
+                <p id='preview'>{text.length > 0 ? text : "Nothing to show"}</p>
             </div>
-        </> 
+        </>
     )
 }
